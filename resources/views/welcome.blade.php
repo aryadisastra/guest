@@ -33,14 +33,19 @@
 								Masuk Untuk Melanjutkan
 							</p>
 						</div>
-
 						<div class="card">
 							<div class="card-body">
 								<div class="m-sm-4">
 									<div class="text-center">
 										<img src="img/icons/logo-menkeu.png" alt="Charles Hall" class="img-fluid rounded-circle" width="132" height="132" />
 									</div>
-									<form>
+									@if (session('error'))
+										<div class="alert alert-danger">
+										<center><p style="color: red">{{ session('error') }}</p></center>
+										</div>
+									  @endif
+									<form method="POST" action="/login">
+										@csrf
 										<div class="mb-3">
 											<label class="form-label">Username</label>
 											<input class="form-control form-control-lg" type="text" name="username" placeholder="Enter your username" />
@@ -50,8 +55,7 @@
 											<input class="form-control form-control-lg" type="password" name="password" placeholder="Enter your password" />
 										</div>
 										<div class="text-center mt-3">
-											<a href="index.html" class="btn btn-lg btn-primary">Sign in</a>
-											<!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
+											<input class="btn btn-lg btn-primary" type="submit" value="Masuk">
 										</div>
 									</form>
 								</div>
