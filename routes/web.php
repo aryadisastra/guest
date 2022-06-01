@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    if(session('user')) return redirect('/dashboard');
+    
     return view('welcome');
 });
+
+Route::post('/login','LoginController@login');
+Route::get('/dashboard','DashboardController@index');
+Route::get('/logout','DashboardController@logout');
