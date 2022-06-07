@@ -9,8 +9,8 @@ class DashboardController extends Controller
     public function index()
     {
         if(!session('user')) return redirect('/')->with('error','Waktu Login Anda Habis');
-
-        return view('dashboard');
+        $menu = 'dashboard';
+        return view('dashboard',compact('menu'));
     }
 
     public function logout(Request $r)
