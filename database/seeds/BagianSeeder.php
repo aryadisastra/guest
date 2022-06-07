@@ -12,8 +12,13 @@ class BagianSeeder extends Seeder
      */
     public function run()
     {
-        $addBagian = new Bagian();
-        $addBagian->nama_bagian = 'Admin';
-        $addBagian->save();
+        $bagian = ['admin','verifikator','operator','inspector'];
+
+        foreach($bagian as $dt)
+        {
+            $addBagian = new Bagian();
+            $addBagian->nama_bagian = $dt;
+            $addBagian->save();
+        }
     }
 }
