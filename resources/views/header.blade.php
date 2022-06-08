@@ -28,6 +28,9 @@
 	.card.success{
 		background-color: #c4fff6;
 	}
+	.card.warning{
+		background-color: #fabb87;
+	}
 </style>
 
 <body>

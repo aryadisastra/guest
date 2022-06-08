@@ -28,3 +28,10 @@ Route::get('/bagian/edit/{id}','BagianController@edit');
 Route::get('/bagian/{id}','BagianController@view');
 Route::post('/bagian/create','BagianController@add');
 Route::post('/bagian/edit','BagianController@update');
+
+Route::get('/pengguna','PenggunaController@index');
+Route::get('/pengguna/create','PenggunaController@create');
+Route::get('/pengguna/edit/{id}','PenggunaController@edit');
+Route::get('/pengguna/{id}','PenggunaController@view');
+Route::post('/pengguna/create','PenggunaController@add');
+Route::post('/pengguna/edit','PenggunaController@update');
