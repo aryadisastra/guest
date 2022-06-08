@@ -11,7 +11,7 @@
 		</footer>
 	</div>
 </div>
-<script src="js/app.js"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 <script>
 	document.addEventListener("DOMContentLoaded", function() {
 		var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");

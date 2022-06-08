@@ -9,10 +9,11 @@
 	<meta name="author" content="AdminKit">
 	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link rel="shortcut icon" href="img/icons/logo-menkeu.png" />
+	<link rel="shortcut icon" href="{{ asset('img/icons/logo-menkeu.png') }}" />
 	<link rel="canonical" href="https://demo-basic.adminkit.io/" />
 	<title>Guest App</title>
-	<link href="css/app.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
@@ -20,6 +21,12 @@
 	.sidebar-link.active-menu{
 		background-color: rgb(77, 49, 49);
 		border-radius: 12%;
+	}
+	.card.error{
+		background-color: blanchedalmond;
+	}
+	.card.success{
+		background-color: #c4fff6;
 	}
 </style>
 
@@ -159,7 +166,7 @@
 									<a href="#" class="list-group-item">
 										<div class="row g-0 align-items-center">
 											<div class="col-2">
-												<img src="img/avatars/avatar-5.jpg" class="avatar img-fluid rounded-circle" alt="Vanessa Tucker">
+												<img src="{{ asset('img/avatars/avatar-5.jpg') }}" class="avatar img-fluid rounded-circle" alt="Vanessa Tucker">
 											</div>
 											<div class="col-10 ps-2">
 												<div class="text-dark">Vanessa Tucker</div>
@@ -171,7 +178,7 @@
 									<a href="#" class="list-group-item">
 										<div class="row g-0 align-items-center">
 											<div class="col-2">
-												<img src="img/avatars/avatar-2.jpg" class="avatar img-fluid rounded-circle" alt="William Harris">
+												<img src="{{ asset('img/avatars/avatar-2.jpg') }}" class="avatar img-fluid rounded-circle" alt="William Harris">
 											</div>
 											<div class="col-10 ps-2">
 												<div class="text-dark">William Harris</div>
@@ -183,7 +190,7 @@
 									<a href="#" class="list-group-item">
 										<div class="row g-0 align-items-center">
 											<div class="col-2">
-												<img src="img/avatars/avatar-4.jpg" class="avatar img-fluid rounded-circle" alt="Christina Mason">
+												<img src="{{ asset('img/avatars/avatar-4.jpg') }}" class="avatar img-fluid rounded-circle" alt="Christina Mason">
 											</div>
 											<div class="col-10 ps-2">
 												<div class="text-dark">Christina Mason</div>
@@ -195,7 +202,7 @@
 									<a href="#" class="list-group-item">
 										<div class="row g-0 align-items-center">
 											<div class="col-2">
-												<img src="img/avatars/avatar-3.jpg" class="avatar img-fluid rounded-circle" alt="Sharon Lessman">
+												<img src="{{ asset('img/avatars/avatar-3.jpg') }}" class="avatar img-fluid rounded-circle" alt="Sharon Lessman">
 											</div>
 											<div class="col-10 ps-2">
 												<div class="text-dark">Sharon Lessman</div>
@@ -215,7 +222,7 @@
                 				<i class="align-middle" data-feather="settings"></i>
               				</a>
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                				<img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" />
+                				<img src="{{ asset('img/avatars/avatar.jpg') }}" class="avatar img-fluid rounded me-1" alt="Charles Hall" />
 								<span class="text-dark">{{ session('user')['nama'] }}</span>
               				</a>
 							<div class="dropdown-menu dropdown-menu-end">

@@ -18,7 +18,13 @@ Route::get('/', function () {
     
     return view('welcome');
 });
-
 Route::post('/login','LoginController@login');
 Route::get('/dashboard','DashboardController@index');
 Route::get('/logout','DashboardController@logout');
+
+Route::get('/bagian','BagianController@index');
+Route::post('/bagian/edit','BagianController@update');
+Route::get('/bagian/edit/{id}','BagianController@edit');
+Route::get('/bagian/{id}','BagianController@view');
+Route::get('/bagian/create','BagianController@create');
+Route::post('/bagian/create','BagianController@add');
