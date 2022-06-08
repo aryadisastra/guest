@@ -35,3 +35,10 @@ Route::get('/pengguna/edit/{id}','PenggunaController@edit');
 Route::get('/pengguna/{id}','PenggunaController@view');
 Route::post('/pengguna/create','PenggunaController@add');
 Route::post('/pengguna/edit','PenggunaController@update');
+
+Route::get('/tamu','TamuController@index');
+Route::get('/tamu/create','TamuController@create');
+Route::get('/tamu/edit/{id}','TamuController@edit');
+Route::get('/tamu/{id}','TamuController@view');
+Route::post('/tamu/create','TamuController@add');
+Route::post('/tamu/edit','TamuController@update');

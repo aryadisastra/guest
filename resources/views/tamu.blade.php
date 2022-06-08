@@ -1,11 +1,11 @@
 @include('header')
 <main class="content">
 	<div class="container-fluid p-0">
-		<h1 class="h3 mb-3">Bagian</h1>
+		<h1 class="h3 mb-3">Tamu</h1>
         <div class="row">
-            <div class="col-12 col-lg-3 col-sm-9 d-flex">
+            <div class="col-12 col-lg-2 col-sm-9 d-flex">
                 <div class="card flex-fill">
-                    <a href="/pengguna/create" class="btn btn-primary">Tambah Pengguna</a>
+                    <a href="/tamu/create" class="btn btn-primary">Tambah Tamu</a>
                 </div>
             </div>
         </div>
@@ -26,16 +26,17 @@
                 <div class="card flex-fill">
                     <div class="card-header">
     
-                        <h5 class="card-title mb-0">Data Bagian</h5>
+                        <h5 class="card-title mb-0">Data Tamu</h5>
                     </div>
                     <table class="table table-hover my-0">
                         <thead>
                             <tr>
                                 <th>#</th>
                                 <th class="d-none d-xl-table-cell">Nama</th>
-                                <th class="d-none d-xl-table-cell">Username</th>
-                                <th class="d-none d-xl-table-cell">Bagian</th>
-                                <th class="d-none d-xl-table-cell">Status</th>
+                                <th class="d-none d-xl-table-cell">Nomor Identitas</th>
+                                <th class="d-none d-xl-table-cell">Email</th>
+                                <th class="d-none d-xl-table-cell">No Hp</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,18 +45,16 @@
                             @endphp
                             @if(count($bagian) == 0)
                             <tr>
-                                <td colspan="5" align="center">Data Tidak Ada</td>
+                                <td colspan="6" align="center">Data Tidak Ada</td>
                             </tr>
                             @else
                             @foreach ($bagian as $dt)
                             <tr>
                                 <td>{{ $no++ }}</td>
-                                <td><a style="text-decoration: none; color:rgb(71, 177, 68);" href="/pengguna/{{ $dt->id }}">{{ ucwords($dt->nama) }}</a></td>
-                                <td>{{ $dt->username }}</td>
-                                @php
-                                    $bagian = \App\Bagian::where('id',$dt->bagian)->first();
-                                @endphp
-                                <td>{{ ucwords($bagian->nama_bagian) }}</td>
+                                <td><a style="text-decoration: none; color:rgb(71, 177, 68);" href="/tamu/{{ $dt->id }}">{{ ucwords($dt->nama) }}</a></td>
+                                <td>{{ $dt->nomor_ktp }}</td>
+                                <td>{{ $dt->email }}</td>
+                                <td>{{ $dt->no_hp }}</td>
                                 <td><span class="badge {{ $dt->status == 1 ?  'bg-success' : 'bg-danger'}}"> {{ $dt->status == 1 ? 'Aktif' : 'Nonaktif' }}</span></td>
                             </tr>
                             @endforeach
