@@ -50,7 +50,7 @@ class TamuController extends Controller
             {
                 $mail->to($email,'no-reply')
                      ->subject("Anda Telah Menjadi Bagian Dari Guest APP");
-                $mail->from('aryadisastra63@gmail.com','Pendaftaran');
+                $mail->from('aryadisastra63@gmail.com','Guest App');
             });
 
             if(Mail::failures())

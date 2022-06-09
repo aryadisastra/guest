@@ -20,6 +20,7 @@ class LoginController extends Controller
 
             session(['user' => [
                 'nama'          => $cekUser->nama,
+                'id'            => $cekUser->id,
                 'username'      => $cekUser->username,
                 'bagian'        => isset($getBagian->nama_bagian) ? $getBagian->nama_bagian : ''
                 ]

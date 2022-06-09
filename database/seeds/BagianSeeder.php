@@ -12,7 +12,7 @@ class BagianSeeder extends Seeder
      */
     public function run()
     {
-        $bagian = ['admin','verifikator','operator','inspector'];
+        $bagian = ['admin','verifikator','operator','inspector','koordinator'];
 
         foreach($bagian as $dt)
         {

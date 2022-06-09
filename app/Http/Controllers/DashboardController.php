@@ -16,7 +16,7 @@ class DashboardController extends Controller
     public function logout(Request $r)
     {
         $r->session()->forget('user');
-        return redirect('/guest');
+        return redirect('/');
     }
 
     public function logoutGuest(Request $r)

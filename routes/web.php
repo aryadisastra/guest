@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,16 @@ Route::get('/pengguna/edit/{id}','PenggunaController@edit');
 Route::get('/pengguna/{id}','PenggunaController@view');
 Route::post('/pengguna/create','PenggunaController@add');
 Route::post('/pengguna/edit','PenggunaController@update');
+
+Route::get('/agenda','AgendaController@index');
+Route::get('/agenda/create','AgendaController@create');
+Route::get('/agenda/edit/{id}','AgendaController@edit');
+Route::get('/agenda/{id}','AgendaController@view');
+Route::post('/agenda/create','AgendaController@add');
+Route::post('/agenda/edit','AgendaController@update');
+Route::get('/agenda/update-status/{id}','AgendaController@updateStatus');
+Route::get('/agenda/reject-status/{id}','AgendaController@rejectStatus');
+Route::get('/agenda/invite-guest/{id}','AgendaController@invite');
 
 Route::get('/tamu','TamuController@index');
 Route::get('/tamu/create','TamuController@create');

@@ -16,6 +16,7 @@ class UserSeeder extends Seeder
                            ['akun' => 'verifikator','bagian' => 2],
                            ['akun' => 'operator','bagian' => 3],
                            ['akun' => 'inspector','bagian' => 4],
+                           ['akun' => 'koordinator','bagian' => 5],
                 ];
 
         foreach ($user as $dt)
