@@ -61,3 +61,9 @@ Route::get('/guest/dashboard','GuestController@dashboard');
 Route::get('/get-verification','GuestController@verification');
 Route::get('/guest-verification','GuestController@verificationview');
 Route::post('/verification','GuestController@postOTP');
+
+Route::get('/see-qr/{id}',function($id)
+{
+
+    return view('see-qr',compact('id'));
+});

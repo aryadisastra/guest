@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Agenda;
+use App\Histori;
+use App\Invitation;
 use App\Tamu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -42,7 +45,24 @@ class GuestController extends Controller
     {
         if(!session('guest')) return redirect('/guest');
         $menu = 'dashboard';
-        return view('dashboard',compact('menu'));
+        $invitation = Invitation::where('tamu',session('guest')['id'])->get();
+        $data =[];
+        foreach($invitation as $dt)
+        {
+            $histori = Histori::where('id_invitation',$dt->id_invitation)->get();
+            foreach($histori as $fix)
+            {
+                $agenda = Agenda::where('id',$dt->id_agenda)->first();
+                $data[$dt->id_invitation] = [
+                    'acara' => $agenda->acara,
+                    'tanggal_acara' => $agenda->tanggal_dimulai,
+                    'keterangan' => $fix->keterangan,
+                    'qrcode' => $dt->value,
+                ];
+            }
+        }
+        // dd($data);
+        return view('dashboard',compact('menu','data'));
     }
 
     public function verification()
