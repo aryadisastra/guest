@@ -76,31 +76,4 @@ class TamuController extends Controller
         $data = Tamu::where('id',$id)->first();
         return view('tamu-detail',compact('menu','data'));
     }
-
-    public function edit($id)
-    {
-        if(!session('user')) return redirect('/')->with('error','Waktu Login Anda Habis');
-        $menu = 'bagian';
-        $data = Bagian::where('id',$id)->first();
-        return view('bagian-edit',compact('menu','data'));
-    }
-
-    public function update(Request $r)
-    {
-        if(!session('user')) return redirect('/')->with('error','Waktu Login Anda Habis');
-        DB::begintransaction();
-        try {
-
-            $data = Bagian::where('id',$r->id)->first();
-            $data->nama_bagian = $r->nama;
-            $data->status = $r->status;
-            $data->save();
-
-            DB::commit();
-            return redirect('/bagian')->with('success','Berhasil Edit !');
-        } catch(Exception $e){
-            DB::rollback();
-            return redirect('/bagian/edit/'.$r->id)->with('error',$e->getMessage());
-        }
-    }
 }

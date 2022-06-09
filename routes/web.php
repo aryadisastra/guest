@@ -15,12 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     if(session('user')) return redirect('/dashboard');
-    
     return view('welcome');
 });
+
 Route::post('/login','LoginController@login');
 Route::get('/dashboard','DashboardController@index');
 Route::get('/logout','DashboardController@logout');
+Route::get('/logout-guest','DashboardController@logoutGuest');
 
 Route::get('/bagian','BagianController@index');
 Route::get('/bagian/create','BagianController@create');
@@ -42,3 +43,10 @@ Route::get('/tamu/edit/{id}','TamuController@edit');
 Route::get('/tamu/{id}','TamuController@view');
 Route::post('/tamu/create','TamuController@add');
 Route::post('/tamu/edit','TamuController@update');
+
+Route::get('/guest','GuestController@index');
+Route::post('/login-guest','GuestController@login');
+Route::get('/guest/dashboard','GuestController@dashboard');
+Route::get('/get-verification','GuestController@verification');
+Route::get('/guest-verification','GuestController@verificationview');
+Route::post('/verification','GuestController@postOTP');

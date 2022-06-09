@@ -41,7 +41,7 @@ class PenggunaController extends Controller
             $add->save();
             
             DB::commit();
-            return redirect('/pengguna')->with('success','Bagian "'.$r->nama.'" Berhasil dibuat!');
+            return redirect('/pengguna')->with('success','Akun "'.$r->nama.'" Berhasil dibuat!');
             
         } catch(Exception $e)
         {
