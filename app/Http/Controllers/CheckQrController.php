@@ -14,7 +14,7 @@ class CheckQrController extends Controller
     }
     public function scan($id)
     {
-        $check = Invitation::where('value','ilike',$id)->first();
+        $check = Invitation::where('value','ilike','%'.$id.'%')->first();
         if($check){
             $history = Histori::where('id_invitation',$check->id_invitation)->where('id_tamu',$check->tamu)->first();
             $history->keterangan = 'Di Hadiri';
