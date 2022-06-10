@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Invitation;
 use Illuminate\Http\Request;
 
 class CheckQrController extends Controller
@@ -12,6 +13,9 @@ class CheckQrController extends Controller
     }
     public function scan($id)
     {
-        return $id;
+        $check = Invitation::where('value','ilike',$id)->first();
+        if($check) return true;
+        return false;
+        
     }
 }

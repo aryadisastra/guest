@@ -67,11 +67,16 @@
 
             success:function(res)
             {
-                $('#value').val(res);
+                if(res == true) {
+                    alert('Anda Masuk');
+                }else {
+                    alert('Salah');
+                }
                 console.log(res);
                 return;
             },
             error: function(error){
+                alert('salah');
                 return;
             }
 
