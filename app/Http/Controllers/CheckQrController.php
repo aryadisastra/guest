@@ -18,6 +18,7 @@ class CheckQrController extends Controller
         if($check){
             $history = Histori::where('id_invitation',$check->id_invitation)->where('id_tamu',$check->tamu)->first();
             $history->keterangan = 'Di Hadiri';
+            $history->save();
             return true;
         } 
         return false;
