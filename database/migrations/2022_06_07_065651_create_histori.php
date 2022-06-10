@@ -16,6 +16,7 @@ class CreateHistori extends Migration
         Schema::create('histori', function (Blueprint $table) {
             $table->id();
             $table->text('id_invitation');
+            $table->integer('id_tamu');
             $table->text('keterangan');
             $table->timestamps();
         });

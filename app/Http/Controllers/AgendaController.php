@@ -139,6 +139,7 @@ class AgendaController extends Controller
 
                 $histori = new Histori();
                 $histori->id_invitation = $undangan->id_invitation;
+                $histori->id_tamu = $dt->id;
                 $histori->keterangan = 'Di Undang';
                 $histori->save();
                 
