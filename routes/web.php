@@ -61,7 +61,8 @@ Route::get('/guest/dashboard','GuestController@dashboard');
 Route::get('/get-verification','GuestController@verification');
 Route::get('/guest-verification','GuestController@verificationview');
 Route::post('/verification','GuestController@postOTP');
-
+Route::get('/check-qr','CheckQrController@index');
+Route::get('/scan-qr/{id}','CheckQrController@scan');
 Route::get('/see-qr/{id}',function($id)
 {
 
